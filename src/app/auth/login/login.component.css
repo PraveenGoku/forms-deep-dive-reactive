@@ -9,3 +9,12 @@
 button {
   padding: 0.6rem 1.75rem;
 }
+
+span{
+  display: flex;
+  flex-direction: column;
+}
+.b{
+  margin: 10px;
+  background-color: black;
+}
