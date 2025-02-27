@@ -1,20 +1,19 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form>
   <h2>Welcome on board!</h2>
   <p>We just need a little bit of data from you to get you started 🚀</p>
 
   <div class="control">
     <label for="email">Email</label>
-    <input id="email" type="email" name="email" formControlName="email"/>
+    <input id="email" type="email" name="email" />
   </div>
 
-  <div class="control-row" formGroupName="passwords">
+  <div class="control-row">
     <div class="control">
       <label for="password">Password</label>
       <input
         id="password"
         type="password"
         name="password"
-        formControlName="password"
       />
     </div>
 
@@ -24,7 +23,6 @@
         id="confirm-password"
         type="password"
         name="confirm-password"
-        formControlName="confirmPassword"
       />
     </div>
   </div>
@@ -39,7 +37,6 @@
           type="text"
           id="first-name"
           name="first-name"
-          formControlName="firstName"
         />
       </div>
 
@@ -49,36 +46,34 @@
           type="text"
           id="last-name"
           name="last-name"
-          formControlName="lastName"
         />
       </div>
     </div>
 
-    <fieldset formGroupName="address">
+    <fieldset>
       <legend>Your Address</legend>
 
       <div class="control-row">
         <div class="control">
           <label for="street">Street</label>
-          <input type="text" id="street" name="street" formControlName="street"
-          />
+          <input type="text" id="street" name="street" />
         </div>
 
         <div class="control">
           <label for="number">Number</label>
-          <input type="text" id="number" name="number" formControlName="number"/>
+          <input type="text" id="number" name="number" />
         </div>
       </div>
 
       <div class="control-row">
         <div class="control">
           <label for="postal-code">Postal Code</label>
-          <input type="text" id="postal-code" name="postal-code" formControlName="postalCode"/>
+          <input type="text" id="postal-code" name="postal-code" />
         </div>
 
         <div class="control">
           <label for="city">City</label>
-          <input type="text" id="city" name="city" formControlName="city"/>
+          <input type="text" id="city" name="city" />
         </div>
       </div>
     </fieldset>
@@ -89,7 +84,7 @@
   <div class="control-row">
     <div class="control">
       <label for="role">What best describes your role?</label>
-      <select id="role" name="role" formControlName="role">
+      <select id="role" name="role">
         <option value="student">Student</option>
         <option value="teacher">Teacher</option>
         <option value="employee">Employee</option>
@@ -99,7 +94,7 @@
     </div>
   </div>
 
-  <fieldset formArrayName="source">
+  <fieldset>
     <legend>How did you find us?</legend>
     <div class="control">
       <input
@@ -107,7 +102,6 @@
         id="google"
         name="acquisition"
         value="google"
-        formControlName="0"
       />
       <label for="google">Google</label>
     </div>
@@ -118,7 +112,6 @@
         id="friend"
         name="acquisition"
         value="friend"
-        formControlName="1"
       />
       <label for="friend">Referred by friend</label>
     </div>
@@ -129,7 +122,6 @@
         id="other"
         name="acquisition"
         value="other"
-        formControlName="2"
       />
       <label for="other">Other</label>
     </div>
@@ -142,7 +134,6 @@
           type="checkbox"
           id="terms-and-conditions"
           name="terms"
-          formControlName="agree"
         />
         I agree to the terms and conditions
       </label>
@@ -150,13 +141,7 @@
   </div>
 
   <p class="form-actions">
-    <button type="button" class="button button-flat" (click)="onReset()">Reset</button>
+    <button type="reset" class="button button-flat">Reset</button>
     <button type="submit" class="button">Sign up</button>
   </p>
-
-  @if(form.touched && form.invalid){
-    <p class="control-error">
-      Invalid form - please check your input data.
-    </p>
-  }
 </form>
